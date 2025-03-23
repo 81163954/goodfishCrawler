@@ -1,6 +1,11 @@
 {
   "compilerOptions": {
-    "types": ["bun-types"]
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
+    },
+    "types": ["bun-types"],
+    "skipLibCheck": true
   },
   "files": [],
   "references": [{ "path": "./tsconfig.app.json" }]

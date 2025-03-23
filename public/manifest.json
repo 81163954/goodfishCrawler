@@ -1,10 +1,21 @@
 {
-  "name": "Hello Extensions",
+  "name": "小柚闲鱼数据助手",
   "description": "Base Level Extension",
   "version": "1.0",
   "manifest_version": 3,
   "action": {
     "default_popup": "index.html",
     "default_icon": "icon.png"
-  }
+  },
+  "background": {
+    "service_worker": "scripts/background.js"
+  },
+  "permissions": ["storage", "tabs", "activeTab", "scripting", "downloads"],
+  "host_permissions": ["*://*.goofish.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["*://*.goofish.com/*"],
+      "js": ["scripts/content.js"]
+    }
+  ]
 }
