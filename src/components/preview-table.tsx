@@ -63,10 +63,12 @@ export function PreviewTable({ previewData = [] }) {
           <TableHeader>
             <TableRow>
               <TableHead>标题</TableHead>
+              <TableHead>详情</TableHead>
               <TableHead>商品价格</TableHead>
               <TableHead>想要数</TableHead>
               <TableHead>浏览量</TableHead>
               <TableHead>店铺名称</TableHead>
+              <TableHead>地区</TableHead>
               <TableHead>商品链接</TableHead>
               <TableHead>是否为推荐商品</TableHead>
             </TableRow>
@@ -80,12 +82,19 @@ export function PreviewTable({ previewData = [] }) {
                 >
                   {item.title}
                 </TableCell>
+                <TableCell
+                  title={item.detail}
+                  className="font-medium max-w-[100px] truncate"
+                >
+                  {item.detail}
+                </TableCell>
                 <TableCell>{item.price}</TableCell>
                 <TableCell>{item.wantCount}</TableCell>
                 <TableCell>{item.viewCount}</TableCell>
                 <TableCell>{item.shopName}</TableCell>
+                <TableCell>{item.area}</TableCell>
                 <TableCell>{item.link}</TableCell>
-                <TableCell>{item.isRecommended}</TableCell>
+                <TableCell>{item.isRecommended ? "是" : "否"}</TableCell>
               </TableRow>
             ))}
           </TableBody>

@@ -5,19 +5,24 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       // 创建CSV数据
       const headers = [
         "标题",
-        "价格",
-        "想要",
-        "浏览",
-        "店铺",
-        "链接",
-        "推荐商品",
+        "详情",
+        "商品价格",
+        "想要数",
+        "浏览量",
+        "店铺名称",
+        "地区",
+        "商品链接",
+        "是否为推荐商品",
       ];
+
       const rows = request.data.map((item) => [
         item.title || "",
+        item.detail || "",
         item.price || "",
         item.wantCount || "",
         item.viewCount || "",
         item.shopName || "",
+        item.area || "",
         item.link || "",
         item.isRecommended ? "是" : "否",
       ]);
